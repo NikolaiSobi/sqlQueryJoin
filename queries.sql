@@ -1,0 +1,4 @@
+-- write your queries here
+-- 1 SELECT * FROM owners FULL JOIN vehicles on owners.id =  vehicles.owner_id;
+-- 2 SELECT owners.first_name, owners.last_name, COUNT(vehicles.owner_id) as count FROM owners JOIN vehicles on owners.id = vehicles.owner_id GROUP BY owners.first_name, owners.last_name, vehicles.owner_id ORDER BY count ASC, owners.first_name ASC;
+-- 3 SELECT first_name, last_name, ROUND(AVG(price)) as average_price, COUNT(owner_id) FROM owners o JOIN vehicles v on o.id=v.owner_id GROUP BY (first_name, last_name) HAVING COUNT(owner_id) > 1 AND ROUND(AVG(price)) > 10000 ORDER BY first_name DESC;
